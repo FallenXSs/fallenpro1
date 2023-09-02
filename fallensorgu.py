@@ -24,8 +24,7 @@ banned_users = {}
 def help_command(message):
     response = "komutlarım:\n\n" \
                "/tcpro - tcpro Sorgu Atar\n\n" \
-               "Not 📋 Bu bot geliştirme aşamasında!"
-               "ver: 2.5\n\n"
+               "ver: 2.5, NOT 📋 Bu bot geliştirme aşamasında!\n\n"
     bot.reply_to(message, response)
 
 def save_banned_users():
