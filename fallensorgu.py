@@ -5,6 +5,8 @@ import requests
 bot = telebot.TeleBot("6086089724:AAEOShd8YmARkpjgJcelI1GKSxgpXlprR3A") 
 
 print("Fallen Is Onnline")
+print("Bot @FallenSorguBot 🌱")
+print("Bot Sahibi @Yakupisyanedior 👨‍💻")
 
 bot_password = "YakupFallen"
 
@@ -12,7 +14,7 @@ bot_owner_chat_id =5638708289
 
 sudo_users = [5638708289]
 
-furkan = "https://teknobash.com/tcpro.php?tc={}"
+yakup = "https://teknobash.com/tcpro.php?tc={}"
 
 
 logged_in_users = {}
@@ -22,7 +24,7 @@ banned_users = {}
 def help_command(message):
     response = "komutlarım:\n\n" \
                "/tcpro - tcpro Sorgu Atar\n\n" \
-               "ver: 1.0\n\n"
+               "ver: 2.5\n\n"
     bot.reply_to(message, response)
 
 def save_banned_users():
@@ -105,7 +107,7 @@ def generate_password(message):
     new_password = ''.join(random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789') for i in range(16))
     global bot_password
     bot_password = new_password
-    bot.send_message(message.chat.id, f"Başarılı! Anahtar Oluşturuldu: {new_password}")
+    bot.send_message(message.chat.id, f"Başarılı!✨ Anahtar Oluşturuldu: {new_password}")
 
 
 @bot.message_handler(commands=["login"])
@@ -123,7 +125,7 @@ def check_password(message):
     user_id = message.chat.id
     if message.text == bot_password:
         logged_in_users[user_id] = True
-        bot.send_message(user_id, "Giriş başarılı.")
+        bot.send_message(user_id, "Giriş başarılı.💸")
     else:
         bot.send_message(user_id, "Key Hatalı Yada Silinmiş Yeni Key Almak için @Yakupisyanedior")
 
@@ -138,7 +140,7 @@ def handle_tcpro_command(message):
     
     tc_no = command_params[1]
     
-    response = requests.get(furkan.format(tc_no))
+    response = requests.get(yakup.format(tc_no))
     
     if response.status_code == 200:
         try:
@@ -185,7 +187,7 @@ def handle_tcpro_command(message):
 def admin_command(message):
     user_id = message.from_user.id
     if user_id in sudo_users:
-        bot.reply_to(message, 'Merhaba Yöneticim! İşte komutlarınız:\n\n/wban - Kullanıcıyı Bottan Yasaklarım\n/unwban - Yasağı Kaldırırım\n/gen - Yeni Key Oluştururum')
+        bot.reply_to(message, 'Merhaba Yöneticim!💫 İşte komutlarınız:\n\n/wban - Kullanıcıyı Bottan Yasaklarım\n/unwban - Yasağı Kaldırırım\n/gen - Yeni Key Oluştururum')
     else:
         
         bot.reply_to(message, 'Bu Komutu Kullanmaya İznin Yok.') 
