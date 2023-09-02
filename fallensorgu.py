@@ -14,7 +14,7 @@ bot_owner_chat_id =5638708289
 
 sudo_users = [5638708289]
 
-yakup = "https://teknobash.com/tcpro.php?tc={}"
+yakup = "http://www.redweb.tech/apiservices/tcpro.php?tc={}"
 
 
 logged_in_users = {}
@@ -24,6 +24,7 @@ banned_users = {}
 def help_command(message):
     response = "komutlarım:\n\n" \
                "/tcpro - tcpro Sorgu Atar\n\n" \
+               "Not 📋 Bu bot geliştirme aşamasında!"
                "ver: 2.5\n\n"
     bot.reply_to(message, response)
 
