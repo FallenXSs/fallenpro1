@@ -22,7 +22,7 @@ banned_users = {}
 
 @bot.message_handler(commands=['help'])
 def help_command(message):
-    response = "komutlarım:\n\n" \
+    response = "Merhaba {message.from_user.first_name} bunlar benim komutlarım:\n\n" \
                "/tcpro - tcpro Sorgu Atar\n\n" \
                "ver: 2.5, NOT 📋 Bu bot geliştirme aşamasında!\n\n"
     bot.reply_to(message, response)
@@ -58,7 +58,7 @@ def start(message):
     if user_id in banned_users:
         bot.reply_to(message, "Fallen Yasaklı Üyesiniz.\n\nYasaklanma Sebebi: " + banned_users[user_id])
     else:
-        bot.reply_to(message, "🌱 Merhaba, Fallen Project hizmetlerini kullanarak, kanal kısımında bulunan sözleşmeyi kabul etmiş sayılırsınız! @FallenPro\n\nBu bot tamamen ücretsizdir! botu satan kişilere itibar etmeyin!: {user_id}")
+        bot.reply_to(message, "🌱 Merhaba, Fallen Project hizmetlerini kullanarak, kanal kısımında bulunan sözleşmeyi kabul etmiş sayılırsınız! @FallenPro\n\nBu bot tamamen ücretsizdir! botu satan kişilere itibar etmeyin komutlar için /help :" + {member.first_name})
                      
 @bot.message_handler(commands=['wban'])
 def ban_user(message):
