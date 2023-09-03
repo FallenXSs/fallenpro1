@@ -24,7 +24,7 @@ banned_users = {}
 def help_command(message):
     response = "Merhaba {message.from_user.first_name} bunlar benim komutlarım:\n\n" \
                "/tcpro - tcpro Sorgu Atar\n\n" \
-               "ver: 2.5, NOT 📋 Bu bot geliştirme aşamasında!\n\n"
+               "ver: 2.5 NOT: 📋 Bu bot daha geliştirme aşamasında!\n\n"
     bot.reply_to(message, response)
 
 def save_banned_users():
@@ -191,5 +191,17 @@ def admin_command(message):
     else:
         
         bot.reply_to(message, 'Bu Komutu Kullanmaya İznin Yok.🤬') 
+        
+    @bot.message_handler(commands=["join"])
+def send_welcome(message): 
+
+markup = telebot.types.InnlineKeyboardMarkup()
+btn_chat = telebot.types.InnlineKeyboardButton("Chat💬", url="https://t.me/FallenProject")
+btn_kanal = telebot.types.InnlineKeyboardButton("My Channel 📢", url="https://t.me/FallenPro")
+
+markup.add(btn_chat)
+    markup.add(btn_kanal)
     
+    bot.reply_to(message, "Grubumuza Katılmak İçin Buttonlara Basabilirsin!", reply_markup=markup)
+
 bot.polling() 
