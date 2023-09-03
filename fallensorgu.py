@@ -58,23 +58,23 @@ def start(message):
     if user_id in banned_users:
         bot.reply_to(message, "Fallen Yasaklı Üyesiniz.\n\nYasaklanma Sebebi: " + banned_users[user_id])
     else:
-        bot.reply_to(message, "🌱 Merhaba, Fallen hizmetlerini kullanarak, alt ⬇️ kısımda bulunan sözleşmeyi kabul etmiş sayılırsınız.\n\n
+        bot.reply_to(message, "🌱 Merhaba, Fallen hizmetlerini kullanarak, alt ⬇️ kısımda bulunan sözleşmeyi kabul etmiş bulunuyoruz\n\n
 
 💐 Kullanım Sözleşmesi - Fallen 😎\n\n
 
-1. Botu kullanarak, botun kullanım şartlarını kabul etmiş sayılırsınız.\n\n
+1. Botu kullanarak, botun kullanım şartlarını kabul etmiş sayilirsiniz\n\n
 
 2. Botun kullanım şartları, botun geliştiricisi tarafından değiştirilebilir.\n\n
 
 3. Botun geliştiricisi, botun kullanım şartlarını değiştirdiğinde, değişiklikler aynı gün içerisinde kullanıcılara bildirilir.\n\n
 
-4. Botta yapılan tüm işlemler kullanıcının sorumluluğundadır.\n\n
+4. Botta yapılan tüm işlemler kullanicinin sorumluluğundadır.\n\n
 
-5. Botun geliştiricisi, botun kullanım şartlarını ihlal eden kullanıcıların (Premium üyeler dahil) hesaplarını askıya alabilir.\n\n
+5. Botun geliştiricisi, botun kullanim şartlarini ihlal eden kullanicilarin (Premium üyeler dahil) hesaplarini askıya alabilir.\n\n
 
-6. Halk arasında Star, Ünlü, Fenomen, Influencer olarak bilinen kişilerin hesaplarına bot üzerinden erişim sağlanamaz aksi takdirde hesaplar askıya alınır
+6. Halk arasında Star, Ünlü, Fenomen, Influencer olarak bilinen kişilerin hesaplarina bot üzerinden erişim sağlanamaz aksi takdirde hesaplar askiya alinir
 .\n\n
-7. Botta yapılabilecek Spam yasaktır, sistem tarafından tespit edilmesi durumunda hesaplar askıya alınır.\n\n
+7. Botta yapılabilecek Spam yasaktır, sistem tarafından tespit edilmesi durumunda hesaplar askiya alinir.\n\n
 
 8. Botun kanalında Spam, Flood, Argolama, Küfür, Hakaret, Reklam, Siyaset, Din, Irk ayrımı yapmak yasaktır!\n\n
 
