@@ -58,7 +58,7 @@ def start(message):
     if user_id in banned_users:
         bot.reply_to(message, "Fallen Yasaklı Üyesiniz.\n\nYasaklanma Sebebi: " + banned_users[user_id])
     else:
-        bot.reply_to(message, "🌱 Merhaba, Fallen hizmetlerini kullanarak, aşağıdaki sözleşmeyi kabul etmiş sayılırsınız.
+        bot.reply_to(message, "🌱 Merhaba, Fallen hizmetlerini kullanarak, alt ⬇️ kısımda bulunan sözleşmeyi kabul etmiş sayılırsınız.
 
 💐 Kullanım Sözleşmesi - Fallen 😎
 
