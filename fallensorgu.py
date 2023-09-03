@@ -191,18 +191,5 @@ def admin_command(message):
     else:
         
         bot.reply_to(message, 'Bu Komutu Kullanmaya İznin Yok.🤬') 
-    #Kanala Katılma 
-
-chat_id = message.chat.id
-    channel_username1 = ("@FallenProject")
-    channel_username2 = ("@FallenPro")
-
-    if is_user_in_channel(chat_id, channel_username1):
-        if is_user_in_channel(chat_id, channel_username2):
-            bot.reply_to(message, "Her iki kanala da katıldınız artık bota erişim sağlaya bilirsiniz!")
-        else:
-            bot.reply_to(message, "Üzgünüm, @FallenPro kanalına katılmadınız!")
-    else:
-        bot.reply_to(message, "Kanallara katılmanız gerekiyor!")
-        
+    
 bot.polling() 
