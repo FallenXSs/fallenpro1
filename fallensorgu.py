@@ -194,8 +194,8 @@ def admin_command(message):
     #Kanala Katılma 
 
 chat_id = message.chat.id
-    channel_username1 = ("@FallenProject")  # İstenilen 1. kanalın kullanıcı adını buraya ekleyin
-    channel_username2 = ("@FallenPro") # İstenilen 2. kanalın kullanıcı adını buraya ekleyin
+    channel_username1 = ("@FallenProject")
+    channel_username2 = ("@FallenPro")
 
     if is_user_in_channel(chat_id, channel_username1):
         if is_user_in_channel(chat_id, channel_username2):
