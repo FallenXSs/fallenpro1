@@ -58,29 +58,8 @@ def start(message):
     if user_id in banned_users:
         bot.reply_to(message, "Fallen Yasaklı Üyesiniz.\n\nYasaklanma Sebebi: " + banned_users[user_id])
     else:
-        bot.reply_to(message, "🌱 Merhaba, Fallen hizmetlerini kullanarak, alt ⬇️ kısımda bulunan sözleşmeyi kabul etmiş bulunuyoruz\n\n
-
-💐 Kullanım Sözleşmesi - Fallen 😎\n\n
-
-1. Botu kullanarak, botun kullanım şartlarını kabul etmiş sayilirsiniz\n\n
-
-2. Botun kullanım şartları, botun geliştiricisi tarafından değiştirilebilir.\n\n
-
-3. Botun geliştiricisi, botun kullanım şartlarını değiştirdiğinde, değişiklikler aynı gün içerisinde kullanıcılara bildirilir.\n\n
-
-4. Botta yapılan tüm işlemler kullanicinin sorumluluğundadır.\n\n
-
-5. Botun geliştiricisi, botun kullanim şartlarini ihlal eden kullanicilarin (Premium üyeler dahil) hesaplarini askıya alabilir.\n\n
-
-6. Halk arasında Star, Ünlü, Fenomen, Influencer olarak bilinen kişilerin hesaplarina bot üzerinden erişim sağlanamaz aksi takdirde hesaplar askiya alinir
-.\n\n
-7. Botta yapılabilecek Spam yasaktır, sistem tarafından tespit edilmesi durumunda hesaplar askiya alinir.\n\n
-
-8. Botun kanalında Spam, Flood, Argolama, Küfür, Hakaret, Reklam, Siyaset, Din, Irk ayrımı yapmak yasaktır!\n\n
-
-🔸 Bu mesajı gördükden sonra, botu kullanmaya devam ederek, sözleşmeyi kabul etmiş sayılırsınız.\n\n
-🕊 Realde Titreyen Elleriniz Sanalda Çok Hızlı \n\nVer:2.5 Fallen hizmetinizde efendim ⚡ \n\nKomutlar için /help")
-
+        bot.reply_to(message, "🌱 Merhaba, Fallen Project hizmetlerini kullanarak, kanal kısımında bulunan sözleşmeyi kabul etmiş sayılırsınız! @FallenPro\n\nBu bot tamamen ücretsizdir! botu satan kişilere itibar etmeyin!: {user_id}")
+                     
 @bot.message_handler(commands=['wban'])
 def ban_user(message):
     if message.from_user.id not in sudo_users:
