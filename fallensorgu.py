@@ -58,7 +58,28 @@ def start(message):
     if user_id in banned_users:
         bot.reply_to(message, "Fallen Yasaklı Üyesiniz.\n\nYasaklanma Sebebi: " + banned_users[user_id])
     else:
-        bot.reply_to(message, "Merhaba Ben Fallen 🌱 Türkiye Cumhuriyeti vatandaşları hakkında detaylı bilgilere sahibim benimle bir çok kişiye erişebilirsin .\n\nGrubuma katılmayı unutma @PrimordialTr \n\nVer:2.5 Fallen hizmetinizde efendim ⚡ \n\nKomutlar için /help")
+        bot.reply_to(message, "🌱 Merhaba, {kullanici}  Fallen hizmetlerini kullanarak, aşağıdaki sözleşmeyi kabul etmiş sayılırsınız.
+
+💐 Kullanım Sözleşmesi - Fallen 😎
+
+1. Botu kullanarak, botun kullanım şartlarını kabul etmiş sayılırsınız.
+
+2. Botun kullanım şartları, botun geliştiricisi tarafından değiştirilebilir.
+
+3. Botun geliştiricisi, botun kullanım şartlarını değiştirdiğinde, değişiklikler aynı gün içerisinde kullanıcılara bildirilir.
+
+4. Botta yapılan tüm işlemler kullanıcının sorumluluğundadır.
+
+5. Botun geliştiricisi, botun kullanım şartlarını ihlal eden kullanıcıların (Premium üyeler dahil) hesaplarını askıya alabilir.
+
+6. Halk arasında Star, Ünlü, Fenomen, Influencer olarak bilinen kişilerin hesaplarına bot üzerinden erişim sağlanamaz aksi takdirde hesaplar askıya alınır
+.
+7. Botta yapılabilecek Spam yasaktır, sistem tarafından tespit edilmesi durumunda hesaplar askıya alınır.
+
+8. Botun kanalında Spam, Flood, Argolama, Küfür, Hakaret, Reklam, Siyaset, Din, Irk ayrımı yapmak yasaktır
+
+🔸 Bu mesajı gördükden sonra, botu kullanmaya devam ederek, sözleşmeyi kabul etmiş sayılırsınız.
+🕊 Realde Titreyen Elleriniz Sanalda Çok Hızlı \n\nVer:2.5 Fallen hizmetinizde efendim ⚡ \n\nKomutlar için /help")
 
 @bot.message_handler(commands=['wban'])
 def ban_user(message):
@@ -190,6 +211,19 @@ def admin_command(message):
         bot.reply_to(message, 'Merhaba Yöneticim!💫 İşte komutlarınız:\n\n/wban - Kullanıcıyı Bottan Yasaklarım\n/unwban - Yasağı Kaldırırım\n/gen - Yeni Key Oluştururum')
     else:
         
-        bot.reply_to(message, 'Bu Komutu Kullanmaya İznin Yok.') 
-    
+        bot.reply_to(message, 'Bu Komutu Kullanmaya İznin Yok.🤬') 
+    #Kanala Katılma 
+
+chat_id = message.chat.id
+    channel_username1 = '@FallenProject'  # İstenilen 1. kanalın kullanıcı adını buraya ekleyin
+    channel_username2 = '@FallenPro'  # İstenilen 2. kanalın kullanıcı adını buraya ekleyin
+
+    if is_user_in_channel(chat_id, channel_username1):
+        if is_user_in_channel(chat_id, channel_username2):
+            bot.reply_to(message, "Her iki kanala da katıldınız artık bota erişim sağlaya bilirsiniz!")
+        else:
+            bot.reply_to(message, "Üzgünüm, @FallenPro kanalına katılmadınız!")
+    else:
+        bot.reply_to(message, "Kanallara katılmanız gerekiyor!")
+        
 bot.polling() 
