@@ -192,16 +192,12 @@ def admin_command(message):
         
         bot.reply_to(message, 'Bu Komutu Kullanmaya İznin Yok.🤬') 
         
-        @bot.message_handler(commands=["join"])
+@bot.message_handler(commands=["join"]) 
 def send_welcome(message):
-
  markup = telebot.types.InnlineKeyboardMarkup()
  btn_chat = telebot.types.InnlineKeyboardButton("Chat💬", url="https://t.me/FallenProject")
  btn_kanal = telebot.types.InnlineKeyboardButton("My Channel 📢", url="https://t.me/FallenPro")
- 
  markup.add(btn_chat)
-     markup.add(btn_kanal)
-     
+ markup.add(btn_kanal)
  bot.reply_to(message, "Grubumuza Katılmak İçin Buttonlara Basabilirsin!", reply_markup=markup)
-    
-bot.polling() 
+ bot.polling() 
