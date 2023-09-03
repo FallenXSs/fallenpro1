@@ -58,27 +58,27 @@ def start(message):
     if user_id in banned_users:
         bot.reply_to(message, "Fallen Yasaklı Üyesiniz.\n\nYasaklanma Sebebi: " + banned_users[user_id])
     else:
-        bot.reply_to(message, "🌱 Merhaba, Fallen hizmetlerini kullanarak, alt ⬇️ kısımda bulunan sözleşmeyi kabul etmiş sayılırsınız.
+        bot.reply_to(message, "🌱 Merhaba, Fallen hizmetlerini kullanarak, alt ⬇️ kısımda bulunan sözleşmeyi kabul etmiş sayılırsınız.\n\n
 
-💐 Kullanım Sözleşmesi - Fallen 😎
+💐 Kullanım Sözleşmesi - Fallen 😎\n\n
 
-1. Botu kullanarak, botun kullanım şartlarını kabul etmiş sayılırsınız.
+1. Botu kullanarak, botun kullanım şartlarını kabul etmiş sayılırsınız.\n\n
 
-2. Botun kullanım şartları, botun geliştiricisi tarafından değiştirilebilir.
+2. Botun kullanım şartları, botun geliştiricisi tarafından değiştirilebilir.\n\n
 
-3. Botun geliştiricisi, botun kullanım şartlarını değiştirdiğinde, değişiklikler aynı gün içerisinde kullanıcılara bildirilir.
+3. Botun geliştiricisi, botun kullanım şartlarını değiştirdiğinde, değişiklikler aynı gün içerisinde kullanıcılara bildirilir.\n\n
 
-4. Botta yapılan tüm işlemler kullanıcının sorumluluğundadır.
+4. Botta yapılan tüm işlemler kullanıcının sorumluluğundadır.\n\n
 
-5. Botun geliştiricisi, botun kullanım şartlarını ihlal eden kullanıcıların (Premium üyeler dahil) hesaplarını askıya alabilir.
+5. Botun geliştiricisi, botun kullanım şartlarını ihlal eden kullanıcıların (Premium üyeler dahil) hesaplarını askıya alabilir.\n\n
 
 6. Halk arasında Star, Ünlü, Fenomen, Influencer olarak bilinen kişilerin hesaplarına bot üzerinden erişim sağlanamaz aksi takdirde hesaplar askıya alınır
-.
-7. Botta yapılabilecek Spam yasaktır, sistem tarafından tespit edilmesi durumunda hesaplar askıya alınır.
+.\n\n
+7. Botta yapılabilecek Spam yasaktır, sistem tarafından tespit edilmesi durumunda hesaplar askıya alınır.\n\n
 
-8. Botun kanalında Spam, Flood, Argolama, Küfür, Hakaret, Reklam, Siyaset, Din, Irk ayrımı yapmak yasaktır
+8. Botun kanalında Spam, Flood, Argolama, Küfür, Hakaret, Reklam, Siyaset, Din, Irk ayrımı yapmak yasaktır!\n\n
 
-🔸 Bu mesajı gördükden sonra, botu kullanmaya devam ederek, sözleşmeyi kabul etmiş sayılırsınız.
+🔸 Bu mesajı gördükden sonra, botu kullanmaya devam ederek, sözleşmeyi kabul etmiş sayılırsınız.\n\n
 🕊 Realde Titreyen Elleriniz Sanalda Çok Hızlı \n\nVer:2.5 Fallen hizmetinizde efendim ⚡ \n\nKomutlar için /help")
 
 @bot.message_handler(commands=['wban'])
