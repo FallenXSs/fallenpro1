@@ -1,5 +1,5 @@
 # Fallen Project 
-bu kodu termuxta çalıştırarak kişisel sorgu botunuzu kura bilirsiniz
+bu kodu termuxta çalıştırarak kişisel sorgu botunuzu kurun
 
 # Kurulum !
 1 pkg install python -y
