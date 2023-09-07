@@ -64,10 +64,9 @@ def start(message):
     else:
         bot.reply_to(message, "🌱 Hoşgeldin reyiz, Fallen Project hizmetlerini kullanarak, kanal kısımında bulunan sözleşmeyi kabul etmiş sayılırsınız! @FallenPro\n\nBu bot tamamen ücretsizdir! botu satan kişilere itibar etmeyin komutlar için /help")
 def send_start_buttons(message):
-# istedigin kadar button ekle 
-keyboard = types.InlineKeyboardMarkup
-owner_button = types.InlineKeybkeyboard("KURUCU", url="t.me/BenYakup")
-fallen_button = types.InlineKeyboardButton("News Channel🆕", url="t.me/FallenPro")
+eklekeyboard = types.InlineKeyboardMarkup
+owner_button = types.InlineKeybkeyboard("owner", url="t.me/BenYakup")
+fallen_button = types.InlineKeyboardButton("Fllen Chat🆕", url="t.me/FallenPro")
 bio_button = types.InlineKeyboardButton("My Bio", url="t.me/FivistBio")
 keyboard.row(owner_button, fallen_button, bio_button)
 bot.send_message(message.chat.id, "Lütfen katılın :(", reply_markup=keyboard)
