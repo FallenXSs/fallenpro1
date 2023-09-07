@@ -28,7 +28,7 @@ def send_help_message(message):
                "/tcpro - tcpro Sorgu Atar\n\n" \
                "/join - Grup ve yeniliklerin bulunduğu kanala katılmak için\n\n" \
                "ver: 2.5 NOT: 📋 Bu bot daha geliştirme aşamasında!\n\n"
-    bot.reply_to(message, response)
+    bot.reply_to(message, response_message)
 
 def save_banned_users():
     with open("yasakli_kisiler.txt", "w") as file:
