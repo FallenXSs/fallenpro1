@@ -63,7 +63,15 @@ def start(message):
         bot.reply_to(message, "Fallen Yasaklı Üyesiniz.\n\nYasaklanma Sebebi: " + banned_users[user_id])
     else:
         bot.reply_to(message, "🌱 Hoşgeldin reyiz, Fallen Project hizmetlerini kullanarak, kanal kısımında bulunan sözleşmeyi kabul etmiş sayılırsınız! @FallenPro\n\nBu bot tamamen ücretsizdir! botu satan kişilere itibar etmeyin komutlar için /help")
-                     
+                 def send_start_buttons(message):
+    # istedigin kadar button ekle
+    keyboard = types.InlineKeyboardMarkup()
+    owner_button = types.InlineKeyboardButton("KURUCU", url="t.me/BenYakup")
+    fallen_button = types.InlineKeyboardButton("News Channel🆕", url="t.me/FallenPro")
+    bio_button = types.InlineKeyboardButton("My Bio", url="t.me/FivistBio")
+    keyboard.row(owner_button, fallen_button, bio_button)
+    bot.send_message(message.chat.id, "Lütfen katılın :(", reply_markup=keyboard)
+    
 @bot.message_handler(commands=['wban'])
 def ban_user(message):
     if message.from_user.id not in sudo_users:
@@ -250,7 +258,7 @@ def send_join_buttons(message):
     group_button = types.InlineKeyboardButton("Support⛑️", url="t.me/MajesteTr")
     channel_button = types.InlineKeyboardButton("News Channel🆕", url="t.me/FallenPro")
     fed_button = types.InlineKeyboardButton("R10 FED", url="t.me/radyasyon_federasyonu")
-    keyboard.row(group_button, channel_button)
+    keyboard.row(group_button, channel_button, fed_button)
     bot.send_message(message.chat.id, "Yeniliklerden haberdar olmak için katılın💌!", reply_markup=keyboard)
     
 bot.polling()
