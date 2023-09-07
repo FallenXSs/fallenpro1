@@ -22,8 +22,9 @@ logged_in_users = {}
 banned_users = {}
 
 @bot.message_handler(commands=['help'])
-def help_command(message):
-    response = "Merhaba {message.from_user.first_name} bunlar benim komutlarım:\n\n" \
+def send_help_message(message):
+    username = message.from_user.first_name
+    response_message = f"Merhaba {username}! "Merhaba  bunlar benim komutlarım:\n\n" \
                "/tcpro - tcpro Sorgu Atar\n\n" \
                "/join - Grup ve yeniliklerin bulunduğu kanala katılmak için\n\n" \
                "ver: 2.5 NOT: 📋 Bu bot daha geliştirme aşamasında!\n\n"
