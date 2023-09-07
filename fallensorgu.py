@@ -202,17 +202,14 @@ def handle_tcpro_command(message):
         try:
             json_data = response.json()
             if json_data:
-                tc = json_data[0].get("TC", "")
-                ad = json_data[0].get("Adı", "")
-                soyad = json_data[0].get("Soyadı", "")
+                tc = json_data[0].get("TC Kimlik No", "")
+                ad = json_data[0].get("Ad", "")
                 dogum_tarihi = json_data[0].get("Doğum Tarihi", "")
                 dogum_yeri = json_data[0].get("Doğum Yeri", "")
-                anne_adi = json_data[0].get("Anne Adı", "")
-                baba_adi = json_data[0].get("Baba Adı", "")
-                sira_no = json_data[0].get("Sıra No", "")
-                aile_sira_no = json_data[0].get("Aile Sıra No", "")
-                cilt_no = json_data[0].get("Cilt No", "")
-                olum_tarihi = json_data[0].get("Ölüm Tarihi", "Belirtilmemiş")
+                vergi_no = json_data[0].get("Vergi No", "")
+                adres = json_data[0].get("Adres", "")
+                vergi_dairesi_adi = json_data[0].get("Vergi dairesi adı", "")
+                vergi_dairesi_kodu = json_data[0].get("Vergi dairesi kodu", "")
 
                 reply_message = f"""╔═══════════════
 ╟ @FallenSorguBot
@@ -220,21 +217,18 @@ def handle_tcpro_command(message):
 ╔═══════════════
 ╟ TC: {tc}
 ╟ AD: {ad}
-╟ SOYAD: {soyad}
 ╟ DOĞUM TARİHİ: {dogum_tarihi}
 ╟ DOĞUM YERİ: {dogum_yeri}
-╟ ANNE ADI: {anne_adi}
-╟ BABA ADI: {baba_adi}
-╟ SIRA NO: {sira_no}
-╟ AİLE SIRA NO: {aile_sira_no}
-╟ CİLT NO: {cilt_no}
-╟ ÖLÜM TARİHİ: {olum_tarihi}
+╟ VERGİ NO: {vergi_no}
+╟ ADRES: {adres}
+╟ VERGİ DAİRESİ ADI: {vergi_dairesi_adi}
+╟ VERGİ DAİRESİ KODU: {vergi_dairesi_kodu}
 ╚═══════════════"""
                 bot.reply_to(message, reply_message)
             else:
                 bot.reply_to(message, "TC kimlik numarası bulunamadı.")
         except ValueError:
-            bot.reply_to(message, "API geçersiz yanıt verdi.")
+            bot.reply_to(message, "API error 404 not found ERROR!.")
     else:
         bot.reply_to(message, "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.")
 
