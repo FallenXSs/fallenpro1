@@ -192,4 +192,4 @@ def admin_command(message):
         
         bot.reply_to(message, 'Bu Komutu Kullanmaya İznin Yok.🤬') 
         
- bot.polling()
+   bot.polling()
