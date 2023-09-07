@@ -25,6 +25,7 @@ banned_users = {}
 def help_command(message):
     response = "Merhaba {message.from_user.first_name} bunlar benim komutlarım:\n\n" \
                "/tcpro - tcpro Sorgu Atar\n\n" \
+               "/join - Grup ve yeniliklerin bulunduğu kanala katılmak için\n\n" \
                "ver: 2.5 NOT: 📋 Bu bot daha geliştirme aşamasında!\n\n"
     bot.reply_to(message, response)
 
