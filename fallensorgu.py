@@ -192,7 +192,7 @@ def handle_tcpro_command(message):
 
     command_params = message.text.split()
     if len(command_params) != 2:
-        bot.reply_to(message, "Hatalı komut kullanımı\nörnek:\n\n/tcpro 11111111110")
+        bot.reply_to(message, "Hatalı komut kullanımı\nörnek:\n\n/adres 11111111110")
         return
     
     tc_no = command_params[1]
