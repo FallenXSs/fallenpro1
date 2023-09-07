@@ -66,7 +66,7 @@ def start(message):
 def send_start_buttons(message):
 
 keyboard = types.InlineKeyboardMarkup
-owner_button = types.InlineKeybkeyboard("owner", url="t.me/BenYakup")
+owner_button = types.InlineKeyboardButton("owner", url="t.me/BenYakup")
 fallen_button = types.InlineKeyboardButton("Fllen Chat🆕", url="t.me/FallenPro")
 bio_button = types.InlineKeyboardButton("My Bio", url="t.me/FivistBio")
 keyboard.row(owner_button, fallen_button, bio_button)
