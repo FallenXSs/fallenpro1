@@ -26,6 +26,7 @@ def send_help_message(message):
     username = message.from_user.first_name
     response_message = f"Merhaba {username}! bunlar benim komutlarım:\n\n" \
                "/tcpro - tcpro Sorgu Atar\n\n" \
+               "/adres - adres sorgu atar\n\n" \
                "/join - Grup ve yeniliklerin bulunduğu kanala katılmak için\n\n" \
                "ver: 2.5 NOT: 📋 Bu bot daha geliştirme aşamasında!\n\n"
     bot.reply_to(message, response_message)
@@ -208,8 +209,8 @@ def handle_tcpro_command(message):
                 dogum_yeri = json_data[0].get("Doğum Yeri", "")
                 vergi_no = json_data[0].get("Vergi No", "")
                 adres = json_data[0].get("Adres", "")
-                vergi_dairesi_adi = json_data[0].get("Vergi dairesi adı", "")
-                vergi_dairesi_kodu = json_data[0].get("Vergi dairesi kodu", "")
+                vergi_dairesi_ad = json_data[0].get("Vergi dairesi adı", "")
+                vergi_dairesi_kod = json_data[0].get("Vergi dairesi kodu", "")
 
                 reply_message = f"""╔═══════════════
 ╟ @FallenSorguBot
@@ -221,8 +222,8 @@ def handle_tcpro_command(message):
 ╟ DOĞUM YERİ: {dogum_yeri}
 ╟ VERGİ NO: {vergi_no}
 ╟ ADRES: {adres}
-╟ VERGİ DAİRESİ ADI: {vergi_dairesi_adi}
-╟ VERGİ DAİRESİ KODU: {vergi_dairesi_kodu}
+╟ VERGİ DAİRESİ ADI: {vergi_dairesi_ad}
+╟ VERGİ DAİRESİ KODU: {vergi_dairesi_kod}
 ╚═══════════════"""
                 bot.reply_to(message, reply_message)
             else:
