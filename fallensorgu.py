@@ -191,5 +191,14 @@ def admin_command(message):
     else:
         
         bot.reply_to(message, 'Bu Komutu Kullanmaya İznin Yok.🤬') 
-
+        
+@bot.message_handler(commands=['join'])
+def send_join_buttons(message):
+    # İki tane buton oluşturun
+    keyboard = types.InlineKeyboardMarkup()
+    group_button = types.InlineKeyboardButton("Grup", url="MajesteTr")
+    channel_button = types.InlineKeyboardButton("Kanal", url="t.me/FallenPro")
+    keyboard.row(group_button, channel_button)
+    bot.send_message(message.chat.id, "Yeniliklerden haberdar olmak için katılın💌!", reply_markup=keyboard)
+    
 bot.polling()
