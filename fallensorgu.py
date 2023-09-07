@@ -63,15 +63,7 @@ def start(message):
         bot.reply_to(message, "Fallen Yasaklı Üyesiniz.\n\nYasaklanma Sebebi: " + banned_users[user_id])
     else:
         bot.reply_to(message, "🌱 Hoşgeldin reyiz, Fallen Project hizmetlerini kullanarak, kanal kısımında bulunan sözleşmeyi kabul etmiş sayılırsınız! @FallenPro\n\nBu bot tamamen ücretsizdir! botu satan kişilere itibar etmeyin komutlar için /help")
-def send_start_buttons(message):
 
-keyboard = types.InlineKeyboardMarkup
-owner_button = types.InlineKeyboardButton("owner", url="t.me/BenYakup")
-fallen_button = types.InlineKeyboardButton("Fllen Chat🆕", url="t.me/FallenPro")
-bio_button = types.InlineKeyboardButton("My Bio", url="t.me/FivistBio")
-keyboard.row(owner_button, fallen_button, bio_button)
-bot.send_message(message.chat.id, "Lütfen katılın :(", reply_markup=keyboard)
-    
 @bot.message_handler(commands=['wban'])
 def ban_user(message):
     if message.from_user.id not in sudo_users:
