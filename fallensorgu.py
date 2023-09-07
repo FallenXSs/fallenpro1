@@ -182,7 +182,7 @@ def handle_tcpro_command(message):
             else:
                 bot.reply_to(message, "TC kimlik numarası bulunamadı.")
         except ValueError:
-            bot.reply_to(message, "API geçersiz yanıt verdi.")
+            bot.reply_to(message, "API IS ERROR! 404.")
     else:
         bot.reply_to(message, "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.")
         
@@ -249,6 +249,7 @@ def send_join_buttons(message):
     keyboard = types.InlineKeyboardMarkup()
     group_button = types.InlineKeyboardButton("Support⛑️", url="t.me/MajesteTr")
     channel_button = types.InlineKeyboardButton("News Channel🆕", url="t.me/FallenPro")
+    group_button = types.InlineKeyboardButton("R10 FED", url="t.me/radyasyon_federasyonu")
     keyboard.row(group_button, channel_button)
     bot.send_message(message.chat.id, "Yeniliklerden haberdar olmak için katılın💌!", reply_markup=keyboard)
     
