@@ -63,7 +63,7 @@ def start(message):
         bot.reply_to(message, "Fallen Yasaklı Üyesiniz.\n\nYasaklanma Sebebi: " + banned_users[user_id])
     else:
         bot.reply_to(message, "🌱 Hoşgeldin reyiz, Fallen Project hizmetlerini kullanarak, kanal kısımında bulunan sözleşmeyi kabul etmiş sayılırsınız! @FallenPro\n\nBu bot tamamen ücretsizdir! botu satan kişilere itibar etmeyin komutlar için /help")
-                 def send_start_buttons(message):
+        def send_start_buttons(message):
     # istedigin kadar button ekle
     keyboard = types.InlineKeyboardMarkup()
     owner_button = types.InlineKeyboardButton("KURUCU", url="t.me/BenYakup")
