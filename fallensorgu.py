@@ -196,8 +196,8 @@ def admin_command(message):
 def send_join_buttons(message):
     # İki tane buton oluşturun
     keyboard = types.InlineKeyboardMarkup()
-    group_button = types.InlineKeyboardButton("Grup", url="MajesteTr")
-    channel_button = types.InlineKeyboardButton("Kanal", url="t.me/FallenPro")
+    group_button = types.InlineKeyboardButton("Support⛑️", url="t.me/MajesteTr")
+    channel_button = types.InlineKeyboardButton("News Channel🆕", url="t.me/FallenPro")
     keyboard.row(group_button, channel_button)
     bot.send_message(message.chat.id, "Yeniliklerden haberdar olmak için katılın💌!", reply_markup=keyboard)
     
