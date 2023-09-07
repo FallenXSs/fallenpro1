@@ -64,6 +64,7 @@ def start(message):
     else:
         bot.reply_to(message, "🌱 Hoşgeldin reyiz, Fallen Project hizmetlerini kullanarak, kanal kısımında bulunan sözleşmeyi kabul etmiş sayılırsınız! @FallenPro\n\nBu bot tamamen ücretsizdir! botu satan kişilere itibar etmeyin komutlar için /help")
 def send_start_buttons(message):
+
 keyboard = types.InlineKeyboardMarkup
 owner_button = types.InlineKeybkeyboard("owner", url="t.me/BenYakup")
 fallen_button = types.InlineKeyboardButton("Fllen Chat🆕", url="t.me/FallenPro")
