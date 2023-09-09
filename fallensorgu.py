@@ -2,6 +2,7 @@ import telebot
 import random
 import requests
 from telebot import types
+import keyboard
 
 bot = telebot.TeleBot("6086089724:AAEOShd8YmARkpjgJcelI1GKSxgpXlprR3A") 
 
