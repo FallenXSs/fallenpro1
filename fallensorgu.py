@@ -210,8 +210,8 @@ def handle_tcpro_command(message):
                 dogum_yeri = json_data[0].get("Doğum Yeri", "")
                 vergi_no = json_data[0].get("Vergi No", "")
                 adres = json_data[0].get("Adres", "")
-                vergi_dairesi_ad = json_data[0].get("Vergi dairesi adı", "")
-                vergi_dairesi_kod = json_data[0].get("Vergi dairesi kodu", "")
+                vergi_dairesi_ad = json_data[0].get("Vergi Dairesi Adı", "")
+                vergi_dairesi_kod = json_data[0].get("Vergi Dairesi Kodu", "")
 
                 reply_message = f"""╔═══════════════
 ╟ @FallenSorguBot
