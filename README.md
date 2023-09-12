@@ -4,8 +4,7 @@
 bu kodu termuxta çalıştırarak kişisel sorgu botunuzu kurun
 
 # Kurulum !
-,,,
-1 pkg install python -y
+,,,1 pkg install python -y
 ,,,
 2 pkg install git
 ,,,
