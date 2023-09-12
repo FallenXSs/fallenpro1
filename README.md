@@ -1,3 +1,5 @@
+<p style="text-align:center;"><img src="https://i.hizliresim.com/f4hx94n.jpg" alt="Logo"></p>
+
 # Fallen Project 
 bu kodu termuxta çalıştırarak kişisel sorgu botunuzu kurun
 
