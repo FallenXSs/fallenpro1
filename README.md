@@ -1,4 +1,4 @@
-<p style="text-align:center;"><img src="https://i.hizliresim.com/f4hx94n.jpg" alt="Logo"></p>
+<p style="text-align:center;"><img src="https://r.resimlink.com/0hW6L3R97_SJ.jpg" alt="Logo"></p>
 
 # Fallen Project 
 bu kodu termuxta çalıştırarak kişisel sorgu botunuzu kurun
