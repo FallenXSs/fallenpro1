@@ -205,14 +205,14 @@ def handle_tcpro_command(message):
         try:
             json_data = response.json()
             if json_data:
-                ogrenci_no = json_data[0].get("Öğrenci No", "")
-                ad = json_data[0].get("Ad", "")
-                soyad = json_data[0].get("Soyad", "")
-                anne_adi = json_data[0].get("Anne Adı", "")
-                baba_adi = json_data[0].get("Baba Adı", "")
-                okul_alani = json_data[0].get("Okul Alanı", "")
-                image = json_data[0].get("İmage", "")
-                reply_message = f"""╔═══════════════
+             ogrenci_no = json_data[0].get("Öğrenci No", "")
+             ad = json_data[0].get("Ad", "")
+             soyad = json_data[0].get("Soyad", "")
+             anne_adi = json_data[0].get("Anne Adı", "")
+             baba_adi = json_data[0].get("Baba Adı", "")
+             okul_alani = json_data[0].get("Okul Alanı", "")
+             image = json_data[0].get("İmage", "")
+             reply_message = f"""╔═══════════════
 ╟ @FallenSorguBot
 ╚═══════════════
 ╔═══════════════
