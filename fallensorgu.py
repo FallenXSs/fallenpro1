@@ -224,10 +224,11 @@ def handle_tcpro_command(message):
 ╟ OKUL ALANI: {okul_alani}
 ╟ İMAGE: {image}
 ╚═══════════════"""
-if condition:
+    if condition:
     bot.reply_to(message, reply_message)
-else:
+    else:
     bot.reply_to(message, "TC kimlik numarası bulunamadı.\n\n Destek 🛠️ @FallenPro !")
+    
 @bot.message_handler(commands=['adres'])
 def handle_tcpro_command(message):
 
