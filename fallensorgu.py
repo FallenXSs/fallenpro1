@@ -224,7 +224,7 @@ def handle_tcpro_command(message):
 ╟ OKUL ALANI: {okul_alani}
 ╟ İMAGE: {image}
 ╚═══════════════"""
-               bot.reply_to(message, reply_message)
+             bot.reply_to(message, reply_message)
             else:
                 bot.reply_to(message, "TC kimlik numarası bulunamadı.")
         except ValueError:
