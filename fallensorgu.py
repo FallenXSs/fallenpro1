@@ -17,8 +17,8 @@ bot_owner_chat_id =5638708289
 sudo_users = [5638708289]
 
 yakup = "https://teknobash.com/tcpro.php?tc={}"
-ADRES = "https://teknobash.com/adres1.php?tc={}"
-AOL = "https://teknobash.com/aol1/php?tc={}"
+adres = "https://teknobash.com/adres1.php?tc={}"
+vesika = "https://teknobash.com/aol1/php?tc={}"
 
 logged_in_users = {}
 banned_users = {}
@@ -29,7 +29,7 @@ def send_help_message(message):
     response_message = f"Merhaba {username}! bunlar benim komutlarım:\n\n" \
                "/tcpro - tcpro Sorgu Atar\n\n" \
                "/adres - adres sorgu atar\n\n" \
-               "/aol - aol vesika sorgu atar\n\n" \
+               "/vesika - aol vesika sorgu atar\n\n" \
                "/join - Grup ve yeniliklerin bulunduğu kanala katılmak için\n\n" \
                "ver: 2.5 NOT: 📋 Bu bot daha geliştirme aşamasında!\n\n"
     bot.reply_to(message, response_message)
@@ -189,29 +189,29 @@ def handle_tcpro_command(message):
     else:
         bot.reply_to(message, "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.")
         
-@bot.message_handler(commands=['aol'])
+@bot.message_handler(commands=['vesika'])
 def handle_tcpro_command(message):
 
     command_params = message.text.split()
     if len(command_params) != 2:
-        bot.reply_to(message, "Hatalı komut kullanımı\nörnek:\n\n/aol 11111111110")
+        bot.reply_to(message, "Hatalı komut kullanımı\nörnek:\n\n/vesika 11111111110")
         return
     
     tc_no = command_params[1]
     
-    response = requests.get(AOL.format(tc_no))
+    response = requests.get(vesika.format(tc_no))
     
     if response.status_code == 200:
         try:
             json_data = response.json()
             if json_data:
                 ogrenci_no = json_data[0].get("Öğrenci No", "")
-                ad = json_data[0].get("Adı", "")
-                soyad = json_data[0].get("Soyadı", "")
+                ad = json_data[0].get("Ad", "")
+                soyad = json_data[0].get("Soyad", "")
                 anne_adi = json_data[0].get("Anne Adı", "")
                 baba_adi = json_data[0].get("Baba Adı", "")
                 okul_alani = json_data[0].get("Okul Alanı", "")
-                image = json_data[0].get("Image", "")
+                image = json_data[0].get("İmage", "")
                 reply_message = f"""╔═══════════════
 ╟ @FallenSorguBot
 ╚═══════════════
@@ -222,7 +222,7 @@ def handle_tcpro_command(message):
 ╟ ANNE ADI: {anne_adi}
 ╟ BABA ADI: {baba_adi}
 ╟ OKUL ALANI: {okul_alani}
-╟ IMAGE: {image}
+╟ İMAGE: {image}
 ╚═══════════════"""
                 bot.reply_to(message, reply_message)
             else:
@@ -243,7 +243,7 @@ def handle_tcpro_command(message):
     
     tc_no = command_params[1]
     
-    response = requests.get(ADRES.format(tc_no))
+    response = requests.get(adres.format(tc_no))
     
     if response.status_code == 200:
         try:
