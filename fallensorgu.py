@@ -18,7 +18,7 @@ sudo_users = [5638708289]
 
 yakup = "https://teknobash.com/tcpro.php?tc={}"
 ADRES = "https://teknobash.com/adres1.php?tc={}"
-AOL = "https://teknobash.com/aol1/php?tc={}
+AOL = "https://teknobash.com/aol1/php?tc={}"
 
 logged_in_users = {}
 banned_users = {}
