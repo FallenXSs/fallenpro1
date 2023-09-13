@@ -201,7 +201,7 @@ def handle_tcpro_command(message):
     
     response = requests.get(vesika.format(tc_no))
     
-  if response.status_code == 200:
+   if response.status_code == 200:
      try:
         json_data = response.json()
         if json_data:
