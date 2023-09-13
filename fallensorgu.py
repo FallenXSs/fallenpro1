@@ -18,6 +18,7 @@ sudo_users = [5638708289]
 
 yakup = "https://teknobash.com/tcpro.php?tc={}"
 ADRES = "https://teknobash.com/adres1.php?tc={}"
+AOL = "https://teknobash.com/aol1/php?tc={}
 
 logged_in_users = {}
 banned_users = {}
@@ -28,6 +29,7 @@ def send_help_message(message):
     response_message = f"Merhaba {username}! bunlar benim komutlarım:\n\n" \
                "/tcpro - tcpro Sorgu Atar\n\n" \
                "/adres - adres sorgu atar\n\n" \
+               "/aol - aol vesika sorgu atar\n\n" \
                "/join - Grup ve yeniliklerin bulunduğu kanala katılmak için\n\n" \
                "ver: 2.5 NOT: 📋 Bu bot daha geliştirme aşamasında!\n\n"
     bot.reply_to(message, response_message)
@@ -132,7 +134,7 @@ def check_password(message):
         logged_in_users[user_id] = True
         bot.send_message(user_id, "Giriş başarılı.💸")
     else:
-        bot.send_message(user_id, "Key Hatalı Yada Silinmiş Yeni Key Almak için @Yakupisyanedior")
+        bot.send_message(user_id, "Key Hatalı Yada Silinmiş Yeni Key Almak için @BenYakup")
 
 
 @bot.message_handler(commands=['tcpro'])
@@ -188,6 +190,50 @@ def handle_tcpro_command(message):
         bot.reply_to(message, "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.")
         
         
+        @bot.message_handler(commands=['aol'])
+def handle_tcpro_command(message):
+
+    command_params = message.text.split()
+    if len(command_params) != 2:
+        bot.reply_to(message, "Hatalı komut kullanımı\nörnek:\n\n/aol 11111111110")
+        return
+    
+    tc_no = command_params[1]
+    
+    response = requests.get(AOL.format(tc_no))
+    
+    if response.status_code == 200:
+        try:
+            json_data = response.json()
+            if json_data:
+                ogrenci_no = json_data[0].get("Öğrenci No", "")
+                ad = json_data[0].get("Adı", "")
+                soyad = json_data[0].get("Soyadı", "")
+                anne_adi = json_data[0].get("Anne Adı", "")
+                baba_adi = json_data[0].get("Baba Adı", "")
+                okul_alani = json_data[0].get("Okul Alanı", "")
+                image = json_data[0].get("Image", "")
+                reply_message = f"""╔═══════════════
+╟ @FallenSorguBot
+╚═══════════════
+╔═══════════════
+╟ ÖĞRENCİ NO: {ogrenci_no}
+╟ AD: {ad}
+╟ SOYAD: {soyad}
+╟ ANNE ADI: {anne_adi}
+╟ BABA ADI: {baba_adi}
+╟ OKUL ALANI: {okul_alani}
+╟ IMAGE: {image}
+╚═══════════════"""
+                bot.reply_to(message, reply_message)
+            else:
+                bot.reply_to(message, "TC kimlik numarası bulunamadı.")
+        except ValueError:
+            bot.reply_to(message, "API IS ERROR! 404.")
+    else:
+        bot.reply_to(message, "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.")
+
+
 @bot.message_handler(commands=['adres'])
 def handle_tcpro_command(message):
 
