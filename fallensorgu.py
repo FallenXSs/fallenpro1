@@ -189,9 +189,8 @@ def handle_tcpro_command(message):
     else:
         bot.reply_to(message, "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.")
         
-        
-@bot.message_handler(commands=['aol'])
-    def handle_tcpro_command(message):
+        @bot.message_handler(commands=['aol'])
+def handle_tcpro_command(message):
 
     command_params = message.text.split()
     if len(command_params) != 2:
