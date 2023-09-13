@@ -225,11 +225,11 @@ def handle_tcpro_command(message):
 ╟ İMAGE: {image}
 ╚═══════════════"""
               bot.reply_to(message, reply_message)
-         else:
+          else:
              bot.reply_to(message, "TC kimlik numarası bulunamadı.")
-     except ValueError:
+      except ValueError:
          bot.reply_to(message, "API IS ERROR! 404.")
- else:
+  else:
      bot.reply_to(message, "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.")
         
 @bot.message_handler(commands=['adres'])
