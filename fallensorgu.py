@@ -232,7 +232,6 @@ bot.reply_to(message, "API error 404 not found ERROR!.")
 else:
 bot.reply_to(message, "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.")
 
-        
 @bot.message_handler(commands=['adres'])
 def handle_tcpro_command(message):
 
