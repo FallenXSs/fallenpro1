@@ -224,14 +224,15 @@ def handle_tcpro_command(message):
 ╟ OKUL ALANI: {okul_alani}
 ╟ İMAGE: {image}
 ╚═══════════════"""
-bot.reply_to(message, reply_message)
-else:
-bot.reply_to(message, "TC kimlik numarası bulunamadı.")
-except ValueError:
-bot.reply_to(message, "API error 404 not found ERROR!.")
-else:
-bot.reply_to(message, "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.")
+                bot.reply_to(message, reply_message)
+            else:
+                bot.reply_to(message, "TC kimlik numarası bulunamadı.")
+        except ValueError:
+            bot.reply_to(message, "API error 404 not found ERROR!.")
+    else:
+        bot.reply_to(message, "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.")
 
+        
 @bot.message_handler(commands=['adres'])
 def handle_tcpro_command(message):
 
