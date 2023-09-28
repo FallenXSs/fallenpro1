@@ -67,6 +67,15 @@ def start(message):
     else:
         bot.reply_to(message, "🌱 Hoşgeldin reyiz, Fallen Project hizmetlerini kullanarak, kanal kısımında bulunan sözleşmeyi kabul etmiş sayılırsınız! @FallenPro\n\nBu bot tamamen ücretsizdir! botu satan kişilere itibar etmeyin komutlar için /help")
 
+markup = types.InlineKeyboardMarkup()
+    btn_add_to_group = types.InlineKeyboardButton("Beni Gruba Ekle", url='https://t.me/FallenSorguBot?startgroup=s&admin=delete_messages+manage_video_chats+pin_messages+invite_users')
+    btn_kurucu_shp = types.InlineKeyboardButton("S A H I P", url='https://t.me/BenYakup')  
+    
+    markup.add(btn_add_to_group, btn_kurucu_shp)
+
+    
+    bot.send_message(message.chat.id, reply_text, reply_markup=markup)
+
 @bot.message_handler(commands=['wban'])
 def ban_user(message):
     if message.from_user.id not in sudo_users:
@@ -251,7 +260,7 @@ def send_join_buttons(message):
     keyboard = types.InlineKeyboardMarkup()
     group_button = types.InlineKeyboardButton("Support⛑️", url="t.me/MajesteTr")
     channel_button = types.InlineKeyboardButton("News Channel🆕", url="t.me/FallenPro")
-    fed_button = types.InlineKeyboardButton("R10 FED", url="t.me/radyasyon_federasyonu")
+    fed_button = types.InlineKeyboardButton("Sohbet Grubum", url="t.me/AlbayrakChat")
     keyboard.row(group_button, channel_button, fed_button)
     bot.send_message(message.chat.id, "Yeniliklerden haberdar olmak için katılın💌!", reply_markup=keyboard)
 
