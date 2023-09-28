@@ -4,7 +4,7 @@ import requests
 from telebot import types
 import keyboard
 
-bot = telebot.TeleBot("6086089724:AAEOShd8YmARkpjgJcelI1GKSxgpXlprR3A") 
+bot = telebot.TeleBot("6086089724:AAELu6YRS_U0JuJMmWPyhtnBMWJ18iOnPRY") 
 
 print("Fallen Is Onnline")
 print("Bot @FallenSorguBot 🌱")
