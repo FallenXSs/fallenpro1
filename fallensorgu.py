@@ -189,49 +189,6 @@ def handle_tcpro_command(message):
     else:
         bot.reply_to(message, "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.")
         
-@bot.message_handler(commands=['vesika'])
-def handle_tcpro_command(message):
-
-    command_params = message.text.split()
-    if len(command_params) != 2:
-        bot.reply_to(message, "Hatalı komut kullanımı\nörnek:\n\n/vesika 11111111110")
-        return
-    
-    tc_no = command_params[1]
-    
-    response = requests.get(vesika.format(tc_no))
-    
-    if response.status_code == 200:
-        try:
-            json_data = response.json()
-            if json_data:
-              ogrenci_no = json_data[0].get("Öğrenci No", "")
-              ad = json_data[0].get("Ad", "")
-              soyad = json_data[0].get("Soyad", "")
-              anne_adi = json_data[0].get("Anne Adı", "")
-              baba_adi = json_data[0].get("Baba Adı", "")
-              okul_alani = json_data[0].get("Okul Alanı", "")
-              image = json_data[0].get("İmage", "")
-              reply_message = f"""╔═══════════════
-╟ @FallenSorguBot
-╚═══════════════
-╔═══════════════
-╟ ÖĞRENCİ NO: {ogrenci_no}
-╟ AD: {ad}
-╟ SOYAD: {soyad}
-╟ ANNE ADI: {anne_adi}
-╟ BABA ADI: {baba_adi}
-╟ OKUL ALANI: {okul_alani}
-╟ İMAGE: {image}
-╚═══════════════"""
-                bot.reply_to(message, reply_message)
-            else:
-                bot.reply_to(message, "TC kimlik numarası bulunamadı.")
-        except ValueError:
-            bot.reply_to(message, "API error 404 not found ERROR!.")
-    else:
-        bot.reply_to(message, "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.")
-        
 @bot.message_handler(commands=['adres'])
 def handle_tcpro_command(message):
 
