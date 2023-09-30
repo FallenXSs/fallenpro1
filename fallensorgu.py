@@ -10,7 +10,7 @@ print("Fallen Is Onnline")
 print("Bot @FallenSorguBot 🌱")
 print("Bot Sahibi @Yakupisyanedior 👨‍💻")
 
-bot_password = "YakupFallen"
+bot_password = "YakupVoid"
 
 bot_owner_chat_id =5638708289
 
@@ -67,13 +67,6 @@ def start(message):
     else:
         bot.reply_to(message, "🌱 Hoşgeldin reyiz, Fallen Project hizmetlerini kullanarak, kanal kısımında bulunan sözleşmeyi kabul etmiş sayılırsınız! @FallenPro\n\nBu bot tamamen ücretsizdir! botu satan kişilere itibar etmeyin komutlar için /help")
 
-markup = types.InlineKeyboardMarkup()
-    btn_add_to_group = types.InlineKeyboardButton("Beni Gruba Ekle", url='https://t.me/FallenSorguBot?startgroup=s&admin=delete_messages+manage_video_chats+pin_messages+invite_users')
-    btn_kurucu_shp = types.InlineKeyboardButton("S A H I P", url='https://t.me/BenYakup')  
-    
-    markup.add(btn_add_to_group, btn_kurucu_shp)
-
-    
     bot.send_message(message.chat.id, reply_text, reply_markup=markup)
 
 @bot.message_handler(commands=['wban'])
