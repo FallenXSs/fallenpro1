@@ -67,8 +67,6 @@ def start(message):
     else:
         bot.reply_to(message, "🌱 Hoşgeldin reyiz, Fallen Project hizmetlerini kullanarak, kanal kısımında bulunan sözleşmeyi kabul etmiş sayılırsınız! @FallenPro\n\nBu bot tamamen ücretsizdir! botu satan kişilere itibar etmeyin komutlar için /help")
 
-    bot.send_message(message.chat.id, reply_text, reply_markup=markup)
-
 @bot.message_handler(commands=['wban'])
 def ban_user(message):
     if message.from_user.id not in sudo_users:
