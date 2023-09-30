@@ -257,9 +257,10 @@ def send_join_buttons(message):
     
 @bot.message_handler(commands=['developer'])
 def send_developer_buttons(message):
-keyboard = types.InlineKeyboardMarkup()
-dev_button = types.InlineKeyboardButton("Owner:)", url="t.me/BenKuzgun")
-keyboard.row(dev_button)
-bot.send_message(message.chat.id, "Onunla tanışmaya ne dersin?", reply_markup=keyboard)
+     # İki tane buton oluşturun
+     keyboard = types.InlineKeyboardMarkup()
+     dev_button = types.InlineKeyboardButton("Owner:)", url="t.me/BenKuzgun")
+     keyboard.row(dev_button)
+     bot.send_message(message.chat.id, "Onunla tanışmaya ne dersin?", reply_markup=keyboard)
 
 bot.polling()
