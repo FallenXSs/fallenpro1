@@ -256,8 +256,7 @@ def send_join_buttons(message):
     bot.send_message(message.chat.id, "Yeniliklerden haberdar olmak için katılın💌!", reply_markup=keyboard)
     
 @bot.message_handler(commands=['developer'])
-def send_developer_buttons(message):
-# İki tane buton oluşturun
+def send_developer_buttons(message): 
 keyboard = types.InlineKeyboardMarkup()
 dev_button = types.InlineKeyboardButton("Owner:)", url="t.me/BenKuzgun")
 keyboard.row(dev_button)
