@@ -3,6 +3,7 @@ import random
 import requests
 from telebot import types
 import keyboard
+from datetime import datetime
 
 bot = telebot.TeleBot("6086089724:AAELu6YRS_U0JuJMmWPyhtnBMWJ18iOnPRY") 
 
@@ -65,7 +66,23 @@ def start(message):
         bot.reply_to(message, "Fallen Yasaklı Üyesiniz.\n\nYasaklanma Sebebi: " + banned_users[user_id])
     else:
         bot.reply_to(message, "🌱 Hoşgeldin reyiz, Fallen Project hizmetlerini kullanarak, kanal kısımında bulunan sözleşmeyi kabul etmiş sayılırsınız! @FallenPro\n\nBu bot tamamen ücretsizdir! botu satan kişilere itibar etmeyin komutlar için /help")
-        
+
+# Grup ID'si
+GROUP_ID = '-1001916631331'
+
+# Bot'u başlatan kişinin kullanıcı adını, adını ve başlatma saatini gruba mesaj olarak gönderen fonksiyon
+def send_log_to_group(username, name, start_time):
+    message = f"Bot başlatıldı:\nKullanıcı Adı: {username}\nAdı: {name}\nBaşlatma Saati: {start_time}"
+    bot.send_message(GROUP_ID, message)
+
+# Bot'u başlatan kişinin kullanıcı adını ve adını alıp send_log_to_group() fonksiyonunu çağıran event handler
+@bot.message_handler(commands=['start'])  # Bot başlatıldığında çalışacak komut
+def handle_start(message):
+    username = message.from_user.username
+    name = message.from_user.first_name
+    start_time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")  # Başlatma saatini al
+    send_log_to_group(username, name, start_time)
+    # İşlemlerinizi burada devam ettirebilirsiniz
 @bot.message_handler(commands=['wban'])
 def ban_user(message):
     if message.from_user.id not in sudo_users:
