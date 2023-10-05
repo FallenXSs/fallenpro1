@@ -59,14 +59,14 @@ def welcome_new_members(message):
         else:
             bot.send_message(message.chat.id, f"Hoş geldin reyiz {member.first_name}!")
 
-@bot.message_handler(commands=['start'])
-def start(message):
-    user_id = message.from_user.id
-    if user_id in banned_users:
-        bot.reply_to(message, "Fallen Yasaklı Üyesiniz.\n\nYasaklanma Sebebi: " + banned_users[user_id])
-    else:
-        bot.reply_to(message, "🌱 Hoşgeldin reyiz, Fallen Project hizmetlerini kullanarak, kanal kısımında bulunan sözleşmeyi kabul etmiş sayılırsınız! @FallenPro\n\nBu bot tamamen ücretsizdir! botu satan kişilere itibar etmeyin komutlar için /help")
-
+@client.on(events.NewMessage(pattern="^/start$"))
+async def start(event):
+  if event.is_private:
+    async for usr in client.iter_participants(event.chat_id):
+     ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
+     await client.send_message("-1001916631331' f'ℹ️ **Yeni Kullanıcı -** {ad}")
+     return await event.reply(f"💖😋 **Merhaba ben Luci Tagger Pro Bot** \n🏷 **Gruplarda kullanıcıları etikelemek için tasarlandım**. \n**Butonları kullanarak yardım alabilirsin.**", buttons=(
+                      [
 @bot.message_handler(commands=['wban'])
 def ban_user(message):
     if message.from_user.id not in sudo_users:
