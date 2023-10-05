@@ -67,22 +67,20 @@ def start(message):
     else:
         bot.reply_to(message, "🌱 Hoşgeldin reyiz, Fallen Project hizmetlerini kullanarak, kanal kısımında bulunan sözleşmeyi kabul etmiş sayılırsınız! @FallenPro\n\nBu bot tamamen ücretsizdir! botu satan kişilere itibar etmeyin komutlar için /help")
 
-# Grup ID'si
-GROUP_ID = '1001916631331'
+GROUP_ID = -1001916631331
 
-# Bot'u başlatan kişinin kullanıcı adını, adını ve başlatma saatini gruba mesaj olarak gönderen fonksiyon
 def send_log_to_group(username, name, start_time):
-    message = f"Bir Kullanıcı Falleni başlattı:\nKullanıcı Adı: {username}\nAdı: {name}\nBaşlatma Saati: {start_time}"
+    message = f"Bot başlatıldı:\nKullanıcı Adı: {username}\nAdı: {name}\nBaşlatma Saati: {start_time}"
     bot.send_message(GROUP_ID, message)
 
 # Bot'u başlatan kişinin kullanıcı adını ve adını alıp send_log_to_group() fonksiyonunu çağıran event handler
-@bot.message_handler(commands=['start'])  # Bot başlatıldığında çalışacak komut
+@bot.message_handler(commands=['start']) 
 def handle_start(message):
     username = message.from_user.username
     name = message.from_user.first_name
-    start_time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")  # Başlatma saatini al
+    start_time = datetime.now().strftime("%d/%m/%Y %H:%M:%S") 
     send_log_to_group(username, name, start_time)
-    # İşlemlerinizi burada devam ettirebilirsiniz
+
 @bot.message_handler(commands=['wban'])
 def ban_user(message):
     if message.from_user.id not in sudo_users:
