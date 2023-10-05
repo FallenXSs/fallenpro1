@@ -68,11 +68,11 @@ def start(message):
         bot.reply_to(message, "🌱 Hoşgeldin reyiz, Fallen Project hizmetlerini kullanarak, kanal kısımında bulunan sözleşmeyi kabul etmiş sayılırsınız! @FallenPro\n\nBu bot tamamen ücretsizdir! botu satan kişilere itibar etmeyin komutlar için /help")
 
 # Grup ID'si
-GROUP_ID = '-1001916631331'
+GROUP_ID = '1001916631331'
 
 # Bot'u başlatan kişinin kullanıcı adını, adını ve başlatma saatini gruba mesaj olarak gönderen fonksiyon
 def send_log_to_group(username, name, start_time):
-    message = f"Bot başlatıldı:\nKullanıcı Adı: {username}\nAdı: {name}\nBaşlatma Saati: {start_time}"
+    message = f"Bir Kullanıcı Falleni başlattı:\nKullanıcı Adı: {username}\nAdı: {name}\nBaşlatma Saati: {start_time}"
     bot.send_message(GROUP_ID, message)
 
 # Bot'u başlatan kişinin kullanıcı adını ve adını alıp send_log_to_group() fonksiyonunu çağıran event handler
