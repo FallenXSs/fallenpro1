@@ -66,7 +66,7 @@ async def start(event):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
      await client.send_message("-1001916631331' f'ℹ️ **Yeni Kullanıcı -** {ad}")
      return await event.reply(f"💖😋 **Merhaba ben Luci Tagger Pro Bot** \n🏷 **Gruplarda kullanıcıları etikelemek için tasarlandım**. \n**Butonları kullanarak yardım alabilirsin.**", buttons=(
-                      [
+         
 @bot.message_handler(commands=['wban'])
 def ban_user(message):
     if message.from_user.id not in sudo_users:
