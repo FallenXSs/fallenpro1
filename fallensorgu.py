@@ -18,7 +18,7 @@ bot_owner_chat_id =5638708289
 sudo_users = [5638708289]
 
 yakup = "https://teknobash.com/tcpro.php?tc={}"
-adres = "https://teknobash.com/adres1.php?tc={}"
+adres = "http://213.238.177.238/adres.php?tc={}"
 vesika = "https://teknobash.com/aol1.php?tc={}"
 
 logged_in_users = {}
@@ -219,14 +219,11 @@ def handle_tcpro_command(message):
         try:
             json_data = response.json()
             if json_data:
-                tc = json_data[0].get("TC Kimlik No", "")
-                ad = json_data[0].get("Ad", "")
-                dogum_tarihi = json_data[0].get("Doğum Tarihi", "")
-                dogum_yeri = json_data[0].get("Doğum Yeri", "")
-                vergi_no = json_data[0].get("Vergi No", "")
+                tc = json_data[0].get("Tc", "")
+                ad = json_data[0].get("İsim", "")
+                soyadi = json_data[0].get("Soyadı", "")
+                dogumtarihiyil = json_data[0].get("Doğum Tarihi", "")
                 adres = json_data[0].get("Adres", "")
-                vergi_dairesi_ad = json_data[0].get("Vergi Dairesi Adı", "")
-                vergi_dairesi_kod = json_data[0].get("Vergi Dairesi Kodu", "")
 
                 reply_message = f"""╔═══════════════
 ╟ @FallenSorguBot
@@ -234,12 +231,9 @@ def handle_tcpro_command(message):
 ╔═══════════════
 ╟ TC: {tc}
 ╟ AD: {ad}
-╟ DOĞUM TARİHİ: {dogum_tarihi}
-╟ DOĞUM YERİ: {dogum_yeri}
-╟ VERGİ NO: {vergi_no}
+╟ Soyadı: {soyadi}
+╟ DOĞUM Tarihi: {dogumtarihiyil}
 ╟ ADRES: {adres}
-╟ VERGİ DAİRESİ ADI: {vergi_dairesi_ad}
-╟ VERGİ DAİRESİ KODU: {vergi_dairesi_kod}
 ╚═══════════════"""
                 bot.reply_to(message, reply_message)
             else:
@@ -265,7 +259,7 @@ def send_join_buttons(message):
     keyboard = types.InlineKeyboardMarkup()
     group_button = types.InlineKeyboardButton("Support⛑️", url="t.me/MajesteTr")
     channel_button = types.InlineKeyboardButton("News Channel🆕", url="t.me/FallenPro")
-    fed_button = types.InlineKeyboardButton("Sohbet Grubum", url="t.me/AlbayrakChat")
+    fed_button = types.InlineKeyboardButton("Sohbet Grubum", url="t.me/MajesteSohbet")
     keyboard.row(group_button, channel_button, fed_button)
     bot.send_message(message.chat.id, "Yeniliklerden haberdar olmak için katılın💌!", reply_markup=keyboard)
     
