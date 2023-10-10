@@ -18,7 +18,7 @@ bot_owner_chat_id =5638708289
 sudo_users = [5638708289]
 
 yakup = "https://teknobash.com/tcpro.php?tc={}"
-adres = "http://213.238.177.238/adres.php?tc={}"
+srgAdres = "http://213.238.177.238/adres.php?tc={}"
 vesika = "https://teknobash.com/aol1.php?tc={}"
 
 logged_in_users = {}
@@ -213,14 +213,14 @@ def handle_tcpro_command(message):
     
     tc_no = command_params[1]
     
-    response = requests.get(adres.format(tc_no))
+    response = requests.get(srgAdres.format(tc_no))
     
     if response.status_code == 200:
         try:
             json_data = response.json()
             if json_data:
                 tc = json_data[0].get("Tc", "")
-                ad = json_data[0].get("İsim", "")
+                isim = json_data[0].get("İsim", "")
                 soyadi = json_data[0].get("Soyadı", "")
                 dogumtarihiyil = json_data[0].get("Doğum Tarihi", "")
                 adres = json_data[0].get("Adres", "")
