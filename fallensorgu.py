@@ -273,22 +273,22 @@ def send_developer_buttons(message):
     
 @bot.message_handler(commands=['stats'])
 def get_stats(message):
-    # Mesajı gönderen kişinin ID'sini al
     user_id = message.from_user.id
+    user_name = message.from_user.first_name
 
-    # Sadece belirli bir kullanıcının veya grup yetkilisinin ID'si ile karşılaştırın
-    authorized_ids = ['5638708289']
+    if user_id in sudo_users:
+        chat_list = bot.get_chat_member_groups(message.from_user.id)
 
-    if user_id in authorized_ids:
-        # Yetkilendirilmiş kişi, grupları ve kanalları alabilir
-        user_name = message.from_user.first_name
-        chat_list = bot.get_chat_member_groups(user_id)
+        # Kullanıcıya cevap ver
         response = f"Merhaba {user_name}, beni kullandığınız gruplar ve kanallar:\n"
+
         for chat in chat_list:
             response += f"- {chat.title} ({chat.type})\n"
+
         bot.reply_to(message, response)
     else:
-        # Yetkilendirilmemiş kişilere veya grup yetkililerine yanıt verme
+        # Yetkilendirilmemiş kişilere yanıt verme
         bot.reply_to(message, "Üzgünüm, bu komutu kullanmaya yetkiniz yok.")
+llanmaya yetkiniz yok.")
         
 bot.polling()
