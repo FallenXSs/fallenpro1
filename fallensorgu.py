@@ -271,14 +271,23 @@ def send_developer_buttons(message):
      dev_button = types.InlineKeyboardButton("Owner :)", url="t.me/Fivist")
      keyboard.row(dev_button)
      bot.send_message(message.chat.id, "Onunla tanışmaya ne dersin?", reply_markup=keyboard)
-    
-# @client.on(events.NewMessage(pattern='^/stats ?(.*)'))
-# async def son_durum(event):
-  #  global anlik_calisan, sudo_users
-  #  sender = await event.get_sender()
-   # if sender.id not in ozel_list:
-   #   return
-   # await event.respond(f"FallenPro istatisikler 🤖\n\nToplam Grup: {len(grup_sayi)}\nAnlık Hizmet eden gruplar: {len(anlik_calisan)}")
 
+@bot.message_handler(commands=['stats'])
+def get_stats(message):
+    user_id = message.from_user.id
+
+    if user_id in sudo_users:
+        # Botunuzun bulunduğu grupları ve kanalları alın
+        chat_list = bot.get_chat_member_groups(user_id)
+
+        # Yanıtı oluşturun
+        response = f"Merhaba yöneticim, işte bulunduğum gruplar ve kanallar:\n"
+
+        for chat in chat_list:
+            response += f"- {chat.title}\n"
+
+        bot.reply_to(message, response)
+    else:
+        bot.reply_to(message, "Üzgünüm, bu komutu kullanmaya yetkiniz yok.")
 
 bot.polling()
