@@ -4,6 +4,7 @@ import requests
 from telebot import types
 import keyboard
 from datetime import datetime
+import requests
 
 bot = telebot.TeleBot("6086089724:AAELu6YRS_U0JuJMmWPyhtnBMWJ18iOnPRY") 
 
@@ -267,7 +268,7 @@ def send_join_buttons(message):
 def send_developer_buttons(message):
      # İki tane buton oluşturun
      keyboard = types.InlineKeyboardMarkup()
-     dev_button = types.InlineKeyboardButton("Owner :)", url="t.me/BenKuzgun")
+     dev_button = types.InlineKeyboardButton("Owner :)", url="t.me/Fivist")
      keyboard.row(dev_button)
      bot.send_message(message.chat.id, "Onunla tanışmaya ne dersin?", reply_markup=keyboard)
     
@@ -277,9 +278,9 @@ def get_stats(message):
     user_name = message.from_user.first_name
 
     if user_id in sudo_users:
+        # Kullanıcı veya botun bulunduğu grupları ve kanalları al
         chat_list = bot.get_chat_member_groups(message.from_user.id)
-
-        # Kullanıcıya cevap ver
+        
         response = f"Merhaba {user_name}, beni kullandığınız gruplar ve kanallar:\n"
 
         for chat in chat_list:
@@ -287,7 +288,6 @@ def get_stats(message):
 
         bot.reply_to(message, response)
     else:
-        # Yetkilendirilmemiş kişilere yanıt verme
         bot.reply_to(message, "Üzgünüm, bu komutu kullanmaya yetkiniz yok.")
-        
+
 bot.polling()
