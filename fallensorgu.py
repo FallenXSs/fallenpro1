@@ -272,13 +272,13 @@ def send_developer_buttons(message):
      keyboard.row(dev_button)
      bot.send_message(message.chat.id, "Onunla tanışmaya ne dersin?", reply_markup=keyboard)
     
-@client.on(events.NewMessage(pattern='^/stats ?(.*)'))
-async def son_durum(event):
-    global anlik_calisan, sudo_users
-    sender = await event.get_sender()
-    if sender.id not in ozel_list:
-      return
-    await event.respond(f"FallenPro istatisikler 🤖\n\nToplam Grup: {len(grup_sayi)}\nAnlık Hizmet eden gruplar: {len(anlik_calisan)}")
+# @client.on(events.NewMessage(pattern='^/stats ?(.*)'))
+# async def son_durum(event):
+  #  global anlik_calisan, sudo_users
+  #  sender = await event.get_sender()
+   # if sender.id not in ozel_list:
+   #   return
+   # await event.respond(f"FallenPro istatisikler 🤖\n\nToplam Grup: {len(grup_sayi)}\nAnlık Hizmet eden gruplar: {len(anlik_calisan)}")
 
 
 bot.polling()
