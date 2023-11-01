@@ -259,7 +259,7 @@ def send_join_buttons(message):
     keyboard = types.InlineKeyboardMarkup()
     group_button = types.InlineKeyboardButton("Support⛑️", url="t.me/MajesteTr")
     channel_button = types.InlineKeyboardButton("News Channel🆕", url="t.me/FallenPro")
-    fed_button = types.InlineKeyboardButton("Sohbet Grubum", url="t.me/MajesteSohbet")
+    fed_button = types.InlineKeyboardButton("Sohbet Grubum", url="t.me/FallenTr")
     keyboard.row(group_button, channel_button, fed_button)
     bot.send_message(message.chat.id, "Yeniliklerden haberdar olmak için katılın💌!", reply_markup=keyboard)
     
