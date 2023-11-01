@@ -289,6 +289,5 @@ def get_stats(message):
     else:
         # Yetkilendirilmemiş kişilere yanıt verme
         bot.reply_to(message, "Üzgünüm, bu komutu kullanmaya yetkiniz yok.")
-llanmaya yetkiniz yok.")
         
 bot.polling()
