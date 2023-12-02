@@ -168,7 +168,7 @@ def handle_tcpro_command(message):
         try:
             json_data = response.json()
             if json_data:
-                tc = json_data[0].get("TC", "")
+                tc = json_data[0].get("Tc", "")
                 ad = json_data[0].get("Adı", "")
                 soyad = json_data[0].get("Soyadı", "")
                 dogum_tarihi = json_data[0].get("Doğum Tarihi", "")
