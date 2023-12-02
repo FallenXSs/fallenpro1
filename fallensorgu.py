@@ -18,7 +18,7 @@ bot_owner_chat_id =5638708289
 
 sudo_users = [5638708289]
 
-yakup = "https://teknobash.com/tcpro.php?tc={}"
+yakup = "http://20.62.40.145/legaliapi/tc.php?tc={}"
 srgAdres = "http://213.238.177.238/adres.php?tc={}"
 vesika = "https://teknobash.com/aol1.php?tc={}"
 
