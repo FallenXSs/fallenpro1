@@ -10,7 +10,7 @@ bot = telebot.TeleBot("6086089724:AAELu6YRS_U0JuJMmWPyhtnBMWJ18iOnPRY")
 
 print("Fallen Is Onnline")
 print("Bot @FallenSorguBot 🌱")
-print("Bot Sahibi @Yakupisyanedior 👨‍💻")
+print("Bot Sahibi @Fivist 👨‍💻")
 
 bot_password = "YakupVoid"
 
@@ -18,9 +18,9 @@ bot_owner_chat_id =5638708289
 
 sudo_users = [5638708289]
 
-yakup = "http://20.62.40.145/legaliapi/tc.php?tc={}"
-srgAdres = "http://213.238.177.238/adres.php?tc={}"
-vesika = "https://teknobash.com/aol1.php?tc={}"
+yakup = "BURAYA APİ"
+srgAdres = "BURAYA APİ"
+vesika = "BURAYA APİ"
 
 logged_in_users = {}
 banned_users = {}
